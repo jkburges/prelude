@@ -3,12 +3,7 @@
 ;; Show line numbers in margin
 (global-linum-mode 1)
 
-;; Split windows horizontally by default
-(setq split-height-threshold nil)
-(setq split-width-threshold 0)
-
 ;; Theming
-(load-theme 'adwaita)
 (global-hl-line-mode 0)
 (setq whitespace-mode 0)
 

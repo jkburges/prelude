@@ -28,5 +28,23 @@ See `comment-region' for behavior of a prefix arg."
 
 (global-set-key (kbd "C-c c") 'copy-and-comment-region)
 
+;; delete trailing whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(set-face-attribute 'default nil :height 125)
+;;(set-face-attribute 'default nil :height 200)
+
+;; Unbind Pesky Sleep Button which crashes emacs for me.
+(global-unset-key [(control z)])
+
+;; setup files ending in “.hbs” to open in web-mode
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+(require 'web-mode)
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  )
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
 (provide 'customisations)
 ;;; customisations.el ends here

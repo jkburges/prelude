@@ -10,6 +10,14 @@
 ;; Disable to most annoying 'feature' ever.
 (setq sp-autoescape-string-quote nil)
 
+;; Disable "kill emacs", which I am wont to do accidentally, quite often
+;; Credit: https://gist.github.com/lateau/5260613
+(defun dont-kill-emacs()
+  "Disable C-x C-c binding execute kill-emacs."
+  (interactive)
+  (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
+(global-set-key (kbd "C-x C-c") 'dont-kill-emacs)
+
 ;; tab width of 4
 (setq c-basic-offset 4)
 

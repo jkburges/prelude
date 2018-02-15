@@ -51,7 +51,9 @@ See `comment-region' for behavior of a prefix arg."
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2)
-  )
+  (setq mode-require-final-newline nil)
+  (setq require-final-newline nil)
+)
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
 (add-hook 'json-mode-hook

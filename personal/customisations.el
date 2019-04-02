@@ -61,5 +61,8 @@ See `comment-region' for behavior of a prefix arg."
             (make-local-variable 'js-indent-level)
             (setq js-indent-level 2)))
 
+;; Stop '{}' being turned in to '{ }'
+(setq tide-format-options '(:insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces true))
+
 (provide 'customisations)
 ;;; customisations.el ends here

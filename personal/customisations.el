@@ -47,6 +47,8 @@ See `comment-region' for behavior of a prefix arg."
 
 ;; setup files ending in “.hbs” to open in web-mode
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tf\\'" . hcl-mode))
+
 (require 'web-mode)
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
@@ -63,6 +65,10 @@ See `comment-region' for behavior of a prefix arg."
 
 ;; Stop '{}' being turned in to '{ }'
 (setq tide-format-options '(:insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces true))
+
+;; Use chruby
+(require 'chruby)
+(chruby "ruby-2.7.1")
 
 (provide 'customisations)
 ;;; customisations.el ends here
